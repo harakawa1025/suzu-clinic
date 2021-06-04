@@ -1,0 +1,191 @@
+@charset "UTF-8";
+/* CSS Document */
+html {  
+  font-size: 62.5%; /* 16px * 62.5% = 10px */
+  width: 100%;
+}
+body {
+  color: #333; /* RGB */
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  margin: 0;   
+}
+
+a:hover {
+  opacity: 0.5;
+}
+.none {
+  display: none;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+.header {
+  background-color: #a1d8e6;
+  color: #fff;
+  width: 100%;
+  
+}
+  
+.header-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  height: 60px;
+  
+}
+.header-content-wrapper h1 {
+  font-size: 28px;
+}
+.header-content-wrapper ul{
+  display: flex;
+  align-items: center;
+}
+.header-content-wrapper li{
+  padding-left: 45px;
+}
+.header-content-wrapper ul li a {
+  font-size: 14px;
+  font-weight: 700;
+}
+.open-button,.close-button{
+  display: none;
+}
+
+@media(max-width: 917px){
+  .header-content-wrapper {
+    height: 50px;
+  }
+  .header-content-wrapper ul{
+    display: block;
+  }
+  .header-content-wrapper h1 img {
+    height: 25px;
+    width: auto;
+  }
+  .open-button {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  .open-button span,.open-button span:before, .open-button span:after{
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    display: block;
+    content:"";
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .open-button span:before {
+    bottom: -8px;
+  }
+  .open-button span:after {
+    bottom: -16px;
+  }
+  .close-button {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  #nav {
+    display: block;
+    z-index: 1000;/*　重ね合わせを一番上に持ってきたいから数字大きめに設定する*/
+    position: fixed; /*動いてもついてくるようにする*/
+    top: 0; /*position:fixedの範囲*/
+    left: 0;
+    background-color: #34aed1;
+    width: 70%; /*横幅を常に70%くらいにするため*/
+    height: 100%;
+    padding-top: 70px;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.4);
+    transform:translateX(-110%);
+    transition: 0.3s ease-in-out;
+    
+  }
+  .header-content-wrapper nav ul li {
+    border-bottom: solid 1px #fff;
+  }
+   .header-content-wrapper nav ul li:first-child{
+    border-top: solid 1px #fff;
+  }
+  .header-content-wrapper nav ul a {
+    line-height: 60px;
+  }
+  #nav-input:checked ~#nav{
+    transform:translateX(0%);
+  }
+}
+
+.footer {
+  background-color: #a1d8e6;
+  width: 100%;
+}
+.footer-content-wrapper {
+  height: 300px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+}
+.footer-content-wrapper h2 {
+  font-size: 38px;
+}
+.footer-nav {
+  font-size: 20px;
+}
+.footer-nav li{
+  font-weight: 600;
+}
+.footer-content-wrapper ul li{
+  padding: 10px 0 10px 0;
+}
+.footer__copy-right {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  padding-bottom: 40px;
+}
+@media(max-width: 823px){
+  .footer-content-wrapper h2 {
+    font-size: 25px;
+  }
+  .footer-nav{
+    font-size: 20px;
+  }
+  .footer-nav li {
+    font-weight: 400;
+  }
+  .footer-content-wrapper a {
+    font-size: 14px;
+  }
+  .footer-content-wrapper ul li{
+   padding: 5px 0;
+}
+  .footer__copy-right {
+    font-size: 12px;
+  }
+}
+
